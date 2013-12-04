@@ -1,0 +1,238 @@
+@charset "UTF-8";
+@font-face {
+font-family: 'Rotis';
+src: url('fonts/Rotis.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+/* Style_mobile.css */
+$azul: #00ADF1;
+$verde: #74D584;
+$amarelo: #F7D95D;
+$amarelo-transparente : transparentize($amarelo, 0.35);
+$cinza: #5c5c5c;
+$cinza-claro: #cacaca;
+$vermelho: #d84040;
+
+@import 'colunas.scss';
+
+@mixin fonte-titulo {  
+  font-family: 'Rotis', "TrebuchetMS",Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+body {
+    background:white;
+    margin:0;
+    padding:0;
+    font-size: 13px;
+    font-family: "TrebuchetMS", Helvetica, Arial;
+}
+
+#bem-vindo {
+	width: 100%; 
+	height: 100%; 
+	position: absolute; 
+	z-index: 990; 
+	background-color: rgba(0,0,0,0.7);
+	vertical-align:middle; text-align:center;
+	font-size: 1.25em;
+	& > * { 
+		color:white; 
+		line-height: 1.5em;
+	}
+	h1 { @include fonte-titulo; margin-bottom: 25px; line-height: 1.5em; }
+	p { font-weight: 300; margin: 5px 0; }
+	a { margin-top : 15px; display:inline-block; cursor: pointer; }
+}
+
+
+#three-stage {
+    width: 100%;
+	background: #eeeeee;
+	overflow:hidden;
+	position:relative;
+	z-index: 5;
+	/*
+	-moz-animation: fundo-animado 30s linear infinite;
+	-webkit-animation: fundo-animado 30s linear infinite;
+	*/
+}
+#three-stage-fundo, #three-stage-fundo2 {
+	width: 100%;
+	height: 100%;
+	background: url(../imagens/fundo.png) repeat;
+	position:absolute;
+	z-index: 0;
+	opacity: 0.15;
+}
+#three-stage-fundo2 {
+	@extend #three-stage-fundo;
+	background: url(../imagens/fundo2.png) repeat;
+	opacity: 0.1;
+	z-index: -1;
+}
+
+@-moz-keyframes fundo-animado {
+	from {
+		background-position: 0 0;
+	} to {
+		background-position: 0 552px;
+	}
+}
+@-webkit-keyframes fundo-animado {
+	from {
+		background-position: 0 0;
+	} to {
+		background-position: 0 552px;
+	}
+}
+
+#dialog {
+	position: absolute;
+	display:none; /* IMPORTANTE COMEÇAR */
+	z-index: 999;
+	/*
+	overflow:hidden;
+	
+	background: white;
+	border: 1px solid red;
+	*/
+}
+
+#torre { 
+	width: 100%; 
+	h1 { 
+		@include fonte-titulo;
+		font-size: 2.5em;
+		border-bottom: 1px solid $cinza-claro;
+		text-transform:none;
+		margin:0 0 10px;
+	}
+	#torre-info {
+		& > div {
+			display:table;
+			width: 100%;
+			& > *{ 
+				display: table-cell; 
+				vertical-align:middle; 
+			}
+			/* Icone principal da torre */
+			#torre-icone { 
+				width: 35%;
+				height: 150px;
+				img { 
+					max-width:85%;
+					max-height: 85%; 
+					display:block;
+					margin: 0 auto;
+				}
+			}
+			/* Foto principal da torre */
+			#torre-foto { 
+				img { 
+					width: auto;
+					max-height: 150px; 
+					display:block;
+					margin: 0 auto;
+				} 
+			}
+			.direita, .esquerda{
+				@include w(49);
+				@include border-box;
+			}
+			.direita {float:right;}
+		}
+	}
+}
+
+.post {
+	width: 100%;
+	@include border-box;
+	background-color: transparentize(white, 0.35);
+	box-shadow: 2px 2px 2px transparentize(black, 0.7);
+	margin-top: 10px;
+	.info {
+		width: 100%;
+		padding: 10px;
+		@include border-box;
+		display:table;
+		
+		& > * { display:table-cell; vertical-align:top; }
+		
+		.icone { 
+			width: 25%;
+			vertical-align:middle;
+			padding-right: 5px;
+			img { width: 80%; margin: 0 auto; display:block; } 
+		}		
+		.mensagem {
+			h2 {
+				@include fonte-titulo;
+				color: $cinza;
+				margin: 10px 0 0px;
+				font-size: 1.10em;
+				padding-bottom: 3px;
+				border-bottom: 1px solid $cinza-claro;		
+			}
+			p { margin: 7px 0; }
+		}/*.mensagem*/
+	}/*.info*/	
+	.rodape-faixa {
+		width: 100%;
+		height: 20px;
+		background-color: $amarelo;
+	}
+	&.contato .rodape-faixa { background-color: $amarelo-transparente; }
+	&.principal { 
+		color:white; 
+		background-color: transparentize($verde, 0.1);
+		@include border-box; 
+		.info .mensagem h2 { color:white; border-bottom-color: $amarelo; }
+		.likes {
+			background-color: $amarelo;
+			@include border-box;
+			padding: 5px;
+			display:block;
+			width: 100%;
+			text-align:right;
+			.like, .dislike {
+				display:inline-block;
+				float:right;
+				margin-left: 5px;
+				color: $vermelho;
+				font-size: 0.8em;
+			}
+		} 
+	}/* .principal */
+	&.contato { padding:0; }
+}/*.post*/
+
+/* Contato */
+#contato-info {
+	display:table;
+	& > div { 
+		display:table-cell;
+		vertical-align: middle;
+		text-align:center;
+		img { width:65%; }
+	}
+	& > div:last-child {
+		@include w(73); 
+		text-align:left;
+	}
+}
+#contato-posts {
+	& > div { 
+		@include w(50);
+		@include border-box;
+		display:table-cell;
+		vertical-align: top;
+		
+		$borda-post : 20px;
+		&.esquerda { padding-right: $borda-post; }
+		&.direita { padding-left: $borda-post; }		
+	}
+}

@@ -1,0 +1,346 @@
+/* compiled by scssphp v0.0.8 on Mon, 25 Nov 2013 12:45:32 -0800 (0.1034s) */
+
+/* Style_mobile.css */
+/* Postar-dialog */
+body {
+  font-family: "TrebuchetMS", Helvetica, Arial;
+}
+header {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #00adf1;
+}
+header h1, footer p {
+  margin: 0;
+  color: white;
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+footer, .botao-destaque {
+  padding: 20px 0;
+  background-color: #00adf1;
+  color: white;
+  font-family: 'Rotis', "TrebuchetMS", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+footer {
+  padding: 0;
+}
+footer p {
+  font-size: 0.8em;
+  padding: 20px 0;
+}
+#conteudo-wrapper {
+  overflow-y: scroll;
+}
+#conteudo {
+  z-index: 1;
+}
+#lista-posts {
+  padding: 0;
+  margin: 0;
+}
+.post, .post *, #postar-dialog, #postar-dialog input, #postar-dialog textarea {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.post {
+  width: 100%;
+  margin: 5px 0;
+  font-size: 16px;
+}
+.post_session {
+  display: block;
+  width: 90%;
+  margin: 25px auto 0;
+}
+.post_img_session {
+  display: table-cell;
+  vertical-align: top;
+  text-align: center;
+}
+.post_img_session img {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 15px;
+  padding-right: 9px;
+}
+.post_content_session {
+  display: table-cell;
+  width: 100%;
+}
+.post_content_session .post_nome {
+  display: block;
+  font-family: 'Rotis', "TrebuchetMS", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 1.25em;
+  color: #5c5c5c;
+  max-width: 100%;
+  border-bottom: 1px solid #bfbfbf;
+  margin-bottom: 5px;
+  padding-top: 17px;
+}
+.post_content_session .post_mensagem {
+  display: block;
+}
+.post_content_session .post_p {
+  display: inline-block;
+}
+.like_session {
+  padding: 10px;
+  background-color: rgba(247, 217, 93, 0.5);
+  text-align: center;
+  font-size: 0.8em;
+  /* Post destaque  */
+}
+.like_session .botao_like:hover {
+  color: rgba(255, 255, 255, 0.4);
+}
+.like_session .botao_like, .like_session .botao_dislike {
+  display: inline-block;
+  margin-left: 15px;
+  padding: 10px 25px;
+  color: white;
+  vertical-align: middle;
+  transition: color 130ms;
+  background-color: #74d584;
+}
+.like_session .botao_like.active, .like_session .botao_like.active:hover {
+  background-color: #5c5c5c;
+  color: white;
+  cursor: default;
+}
+.like_session .botao_dislike {
+  background-color: #d84040;
+}
+.post.destaque {
+  margin-top: 0;
+  margin-bottom: 15px;
+  width: 100%;
+  background-color: #74d584;
+  /*
+#post-destaque { width: 100%; background-color:$verde;}
+#post-destaque .post {display:table-row; margin: 0 auto; background-color:transparent;}
+.post-destaque-img, .post-destaque-content {display: table-cell; vertical-align: middle;}
+.post-destaque-img {width: 20%; text-align:center;}
+.post-destaque-img img {width: 85%;}
+.post-destaque-content .post_content_session {vertical-align: middle;}
+.post-destaque-content .post_img_session {width:24%;}
+*/
+  /* -------------- */
+}
+.post.destaque .post_session {
+  margin-top: 0;
+}
+.post.destaque .post-destaque-img {
+  display: table-cell;
+  vertical-align: middle;
+}
+.post.destaque .post-destaque-img img {
+  display: block;
+  margin-left: 15px;
+}
+.post.destaque .like_session {
+  background-color: #f7d95d;
+}
+#postar {
+  width: 100%;
+  font-family: 'Rotis', "TrebuchetMS", Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: white;
+}
+#postar * {
+  vertical-align: middle;
+  margin: 0;
+}
+#postar-dialog {
+  position: fixed;
+  display: none;
+  padding: 0;
+  background-color: white;
+  z-index: 999;
+  /* Icones selecionaveis > ul > li */
+}
+#postar-dialog h2 {
+  color: #5c5c5c;
+  margin: 0;
+  padding: 1em 0 1em 1em;
+  text-align: left;
+}
+#postar-dialog input, #postar-dialog textarea {
+  font-family: inherit;
+  font-size: 1.2em;
+  border: 1px solid #cacaca;
+  padding: 10px 15px;
+  margin: 0;
+  display: block;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#postar-dialog textarea {
+  max-height: 100%;
+}
+#postar-dialog #form-fechar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+#postar-dialog #form-fechar img {
+  width: 30px;
+  opacity: 0.3;
+}
+#postar-dialog #user-config {
+  position: absolute;
+  right: 65px;
+  top: 15px;
+}
+#postar-dialog #user-config img {
+  width: 30px;
+  opacity: 0.3;
+}
+#postar-dialog #user-config-form {
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  left: 15px;
+  background-color: white;
+  border: 1px solid #5c5c5c;
+  display: none;
+  padding: 15px;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#postar-dialog #user-config-form p {
+  margin: 0 0 10px;
+  padding: 0;
+}
+#postar-dialog #user-config-form input[type=submit] {
+  margin-top: 10px;
+  border: none;
+  font-size: 0.9em;
+}
+#postar-dialog #user-config-form #user-config-fechar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+#postar-dialog #user-config-form #user-config-fechar img {
+  width: 25px;
+  opacity: 0.3;
+}
+#postar-dialog #user-config-form-fundo {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  transition: all 300ms;
+}
+#postar-form-top {
+  position: relative;
+}
+#select-icones-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  height: 0%;
+  background-color: rgba(255, 255, 255, 0.85);
+  overflow-y: scroll;
+}
+#select-icones {
+  margin: 0;
+  /*height:100%; /* Desabilitar para funcionar a rolagem */
+  display: block;
+  /* Abaixo da caixa de mensagem */
+}
+#select-icones h2 {
+  font-size: 1.2em;
+  margin: 0 0 10px 0;
+  padding: 0.6em;
+  text-transform: uppercase;
+  color: white;
+  background-color: #00adf1;
+}
+#select-icones ul {
+  display: block;
+  height: auto;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+}
+#select-icones li {
+  width: 24%;
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#select-icones li img {
+  display: block;
+  margin: 0 auto;
+}
+#select-icones li img:active {
+  border: 1px solid #00adf1;
+}
+#postar-form-bottom {
+  /*
+#postar-dialog form {
+  display:block;
+  margin: 0 auto;
+  padding:15px;
+}
+*/
+}
+#postar-form-bottom #input-icone {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+  background-color: #f7d95d;
+  /* Botão enviar ->  */
+}
+#postar-form-bottom #input-icone img {
+  display: block;
+  margin: 0 auto;
+}
+#postar-form-bottom input[type=submit], #postar-form-bottom .botao-destaque {
+  display: block;
+  padding: 20px 0;
+  margin-bottom: 0;
+  border: none;
+  font-size: 1em;
+}
+#pagination {
+  text-align: center;
+}
+#pagination #lista-pagination {
+  display: inline-block;
+  width: auto;
+  margin: 20px 0;
+}
+#pagination #lista-pagination a {
+  padding: 10px 20px;
+  background-color: #00adf1;
+  color: white;
+}

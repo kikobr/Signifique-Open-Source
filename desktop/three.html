@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<head>
+    <title>
+        Three.js
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/three.min.js"></script>
+    <!--
+        <script type="text/javascript" src="js/addCube.js"></script>
+        -->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function(e) {
+            go_js();
+        });
+
+        function go_js(e) {
+            //Elemento do stage
+            stage_dom = document.getElementById('three-stage');
+            
+            //Criar um render
+            var renderer = new THREE.WebGLRenderer({
+                antialias: true
+            });
+            renderer.setSize(stage_dom.clientWidth, stage_dom.clientHeight);
+            renderer.shadowMapEnabled = true;
+            //adicioná-lo ao DOM
+            stage_dom.appendChild(renderer.domElement);
+
+            // Seta a cor de fundo do renderer.
+            //renderer.setClearColorHex(0xEEEEEE, 1.0);
+            renderer.clear();
+
+            //Criar uma câmera
+            // new THREE.PerspectiveCamera(FOV, viewAspectRatio, zNear, zFar);
+            var camera = new THREE.PerspectiveCamera(45, stage_dom.clientWidth / stage_dom.clientHeight, 1, 10000);
+            camera.position.z = 500;
+
+            //Criar uma cena
+            var scene = new THREE.Scene();
+            //Criar um cubo
+            var cube = new THREE.Mesh(new THREE.CubeGeometry(50, 50, 50), new THREE.MeshBasicMaterial({
+                color: 0x000000
+            }));
+            cube.castShadow = true;
+            scene.add(cube);
+			
+			/*
+            //Segundo cubo
+            var litCube = new THREE.Mesh(
+                new THREE.CubeGeometry(50, 50, 50),
+                new THREE.MeshLambertMaterial({
+                    color: 0xFFFFFF
+                }));
+            litCube.position.y = 50;
+            litCube.castShadow = true;
+            scene.add(litCube);
+            document.addEventListener('click', function(e){
+               litCube.scaling = true;
+                litCube.scaleTo = 3;
+            });
+			*/
+            
+            //Criar luz
+            var light = new THREE.SpotLight({color: 0xff0000});
+            light.position.set(280, 200, 160);
+            light.castShadow = true;
+            light.shadowDarkness = 2;
+            //light.shadowCameraVisible = true;
+            scene.add(light);
+					
+			//Load jarra_tosca.js
+			var loader = new THREE.JSONLoader();			
+			function createMesh( geometry ){
+			  var mesh = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial());
+			  mesh.position.x = 0;
+			  mesh.position.y = 50;
+			  mesh.position.z = 0;
+			  mesh.scale.set( 20, 20, 20);
+			  mesh.castShadow = true;
+			  mesh.name = "jarra";
+			  scene.add( mesh );
+			};			
+			loader.load( "js/jarra_tosca.js", createMesh );
+				
+            //Criar plano
+            var planeGeo = new THREE.PlaneGeometry(400, 200, 10, 10);
+            var planeMat = new THREE.MeshLambertMaterial({
+                color: 0xFFFFFF
+            });
+            var plane = new THREE.Mesh(planeGeo, planeMat);
+            plane.rotation.x = -Math.PI / 2;
+            plane.position.y = -25;
+            plane.receiveShadow = true;
+            scene.add(plane);
+            
+            
+
+            //Renderizar a cena utilizando a camera
+            renderer.render(scene, camera);
+
+            //ANIMAÇÃO
+            function animate(t) {
+                // spin the camera in a circle
+                camera.position.x = Math.sin(t / 1000) * 300;
+                camera.position.y = 150;
+                camera.position.z = Math.cos(t / 1000) * 300;
+                // com o lookAt você direciona a câmera para a cena a cada frame. caso contrário,
+                // a câmera irá navegar pelo espaço.
+                camera.lookAt(scene.position);
+                
+				if(scene.getObjectByName('jarra') != undefined){
+					jarra = scene.getObjectByName('jarra');
+					jarra.position.x = Math.cos(t/600)*85;
+					jarra.position.y = 60-Math.sin(t/900)*25;
+					jarra.position.z = Math.sin(t/600)*85;
+					jarra.rotation.x = t/500;
+					jarra.rotation.y = t/800;
+				}
+				/*
+                litCube.position.x = Math.cos(t/600)*85;
+                litCube.position.y = 60-Math.sin(t/900)*25;
+                litCube.position.z = Math.sin(t/600)*85;
+                litCube.rotation.x = t/500;
+                litCube.rotation.y = t/800;
+				
+                
+                if(litCube.scaling && litCube.scaling.direction == 'abre'){
+                    litCube.scale.y += 0.1;
+                    if(litCube.scale.y >= litCube.scaleTo){
+                        litCube.scaling = false;
+                    }
+                }
+				*/
+				
+                /*
+                light.position.x = Math.sin(t / 1000) * 300;
+                light.position.y = 150;
+                light.position.z = Math.cos(t / 1000) * 300;
+                */
+                // renderer automatically clears unless autoClear = false;
+                
+                renderer.render(scene, camera);
+                window.requestAnimationFrame(animate, renderer.domElement);
+            };
+            animate(new Date().getTime());
+        }
+    </script>
+</head>
+
+<body>
+    <div id="conteudo" class="middle">
+        <div id="three-stage">
+			
+        </div>
+        <!-- three-scene -->
+    </div>
+    <!-- conteudo -->
+</body>
+
+</html>

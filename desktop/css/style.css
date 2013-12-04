@@ -1,0 +1,27 @@
+
+body {
+    background:yellow;
+    margin:0;
+    padding:0;
+}
+
+p {
+    background-color:red;
+}
+
+#three-stage {
+    width: 100%;
+	background: #eeeeee;
+	overflow:hidden;
+	background: url(../img/fundo.jpg) repeat;
+	
+	-moz-animation: fundo-animado 30s linear infinite;
+}
+
+@-moz-keyframes fundo-animado {
+	from {
+		background-position: 0 0;
+	} to {
+		background-position: 0 552px;
+	}
+}

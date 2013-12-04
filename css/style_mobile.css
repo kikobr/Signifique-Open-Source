@@ -1,0 +1,165 @@
+/*
+ azul - #00ADF1;
+ verde - #74D584;
+ amarelo: #F7D95D;
+ */
+body {
+	font-family: "TrebuchetMS", Helvetica, Arial;
+}
+header{
+	text-align:center;
+	padding: 20px 0;
+	background-color: #00ADF1;
+}
+header h1, footer p {
+	margin: 0;
+	color:white;
+	font-size: 1.3em;
+	text-transform: uppercase;
+}
+footer, .botao-destaque {
+	padding:20px 0;
+	background-color:#00ADF1;
+	color:white;
+	font-family: 'Rotis', "TrebuchetMS",Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-size:1.3em;
+}
+footer {padding:0;}
+footer p {font-size: 0.8em;	padding:20px 0;}
+
+#conteudo {z-index:1;}
+
+#lista-posts { padding: 0; margin:0;}
+
+.post, .post *, #postar-dialog, #postar-dialog input, #postar-dialog textarea {
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.post{
+	width: 100%;
+	margin: 5px 0;
+	font-size: 16px;
+}
+.post_session { padding: 15px; display:table-row; }
+.post_img_session, .post_content_session { display: table-cell; vertical-align:top; }
+.post_content_session { padding-right:20px; }
+.post_img_session { width:20%; vertical-align: middle; text-align: center; }
+
+.post_img_session img {
+	width:85%;
+	display:inline-block;
+	vertical-align:top;
+}
+
+.post_nome {
+	display:block;
+	font-family: 'Rotis', "TrebuchetMS",Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 100;
+	color:#5c5c5c;
+	max-width: 100%;
+	border-bottom: 1px solid #bfbfbf;
+}
+.post_mensagem {
+	display:block;
+}
+.post_p {display:inline-block;}
+
+.like_session {
+	padding: 10px;
+	background-color: #F7D95D;
+	text-align:center;
+}
+.botao_like:hover {color:rgba(255,255,255,0.4);}
+.botao_like, .botao_dislike {
+	display:inline-block; 
+	margin-left:15px;
+	padding: 10px;
+	color:white;
+	vertical-align:middle; 
+	transition: color 130ms;
+	background-color: #74D584;
+}
+.botao_like.active, .botao_like.active:hover { 
+	background-color: #999999;
+	color:white;
+	cursor:default;
+	text-transform: uppercase;
+}
+.botao_dislike {
+	background-color: #d84040;
+}
+
+/* Post destaque  */
+#post-destaque { width: 100%; background-color:#74D584;}
+#post-destaque .post {display:table-row; margin: 0 auto; background-color:transparent;}
+.post-destaque-img, .post-destaque-content {display: table-cell; vertical-align: middle;}
+.post-destaque-img {width: 20%; text-align:center;}
+.post-destaque-img img {width: 85%;}
+.post-destaque-content .post_content_session {vertical-align: middle;}
+.post-destaque-content .post_img_session {width:24%;}
+
+/* -------------- */
+/* Postar-dialog */
+#postar {
+	width:100%;
+	font-family: 'Rotis', "TrebuchetMS",Helvetica, Arial, sans-serif;
+	text-align:center;
+	color:white;
+	font-family: 
+}
+#postar * {vertical-align:middle; margin:0;}
+
+#postar-dialog {
+	position:fixed;
+	display:none;
+	padding: 0;
+	background-color:white;
+	z-index: 999;
+}
+#postar-dialog #postar-form {}
+#postar-dialog h2 { color:#5c5c5c; margin:0 0 20px 0; }
+#postar-dialog input, #postar-dialog textarea {
+	border: 1px solid #cacaca;
+	padding: 5px;
+	margin:0;
+	display:block;
+	width: 100%;
+}
+#postar-dialog textarea { margin:padding: 0 10px; max-height: 100%;}
+#postar-dialog #postar-form-bottom { 
+}
+#postar-dialog #input-icone {
+	width: 100%;
+	overflow:hidden;
+	padding:10px 0;
+	background-color: #F7D95D;
+}
+#postar-dialog #input-icone img {
+	display:block;
+	margin:0 auto;
+}
+#postar-dialog #form-fechar {
+	position: absolute;
+	top: 15px; right: 40px;
+}
+#postar-dialog #user-config {
+	position: absolute;
+	top: 15px; right: 10px;
+}
+#postar-dialog #postar-form-bottom input[type=submit]{
+	display:block;
+	padding:20px 0;
+	margin-bottom:0;
+	border: none;
+	font-size:0.9em;
+}
+/*#postar-dialog form {
+	display:block;
+	margin: 0 auto;
+	padding:15px;
+}*/

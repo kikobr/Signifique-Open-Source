@@ -1,0 +1,24 @@
+<div id="postar-dialog" style="display:none;">
+	<form id="postar-form">
+		<div id="postar-form-top">
+			<h2>Nova Mensagem</h2>
+			<input type="text" id="input-nome" placeholder="Qual seu nome? :)" required="required" />
+			<textarea id="input-mensagem" placeholder="Mensagem" required="required"></textarea>
+			<div id="select-icones">
+				<div id="input-icone" data-value="firefox.png">
+					<img src="imagens/firefox.png" height="100" />
+				</div>
+			</div>
+		</div>
+		<div id="postar-form-bottom">
+			<input class="botao-destaque" type="submit" value="Enviar"></input>
+		</div>
+	</form>
+	
+	<a id="form-fechar">Fechar</a>
+	<a id="user-config">Config</a>
+	<form id="user-config-form" style="display: none;">
+		<input id="user-config-nome" type="text" placeholder="Seu nome" />
+		<input type="submit" value="Atualizar" />
+	</form>
+</div>

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+@font-face {
+font-family: 'Rotis';
+src: url('fonts/Rotis.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+body, img {
+	margin:0;
+	padding:0;
+	border: none;
+	font-size: 14px;
+}
+a {
+	color:inherit;
+	text-decoration:inherit;
+	cursor:pointer;
+}
+html, body, #all {
+	width:100%
+	max-width:100%;
+}
+#all {overflow-y:hidden;}
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Rotis', "TrebuchetMS",Helvetica, Arial, sans-serif;
+}

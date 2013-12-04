@@ -1,0 +1,289 @@
+/* compiled by scssphp v0.0.8 on Mon, 25 Nov 2013 12:56:24 -0800 (0.0806s) */
+
+@charset "UTF-8";
+@font-face {
+  font-family: 'Rotis';
+  src: url('fonts/Rotis.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  /* Style_mobile.css */
+}
+body {
+  background: white;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: "TrebuchetMS", Helvetica, Arial;
+}
+#bem-vindo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 990;
+  background-color: rgba(0, 0, 0, 0.7);
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.25em;
+}
+#bem-vindo > * {
+  color: white;
+  line-height: 1.5em;
+}
+#bem-vindo h1 {
+  font-family: 'Rotis', "TrebuchetMS", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin-bottom: 25px;
+  line-height: 1.5em;
+}
+#bem-vindo p {
+  font-weight: 300;
+  margin: 5px 0;
+}
+#bem-vindo a {
+  margin-top : 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+#three-stage {
+  width: 100%;
+  background: #eee;
+  overflow: hidden;
+  position: relative;
+  /*
+	-moz-animation: fundo-animado 30s linear infinite;
+	-webkit-animation: fundo-animado 30s linear infinite;
+	*/
+  z-index: 5;
+}
+#three-stage-fundo, #three-stage-fundo2, #three-stage-fundo2 {
+  width: 100%;
+  height: 100%;
+  background: url(../imagens/fundo.png) repeat;
+  position: absolute;
+  z-index: 0;
+  opacity: 0.15;
+}
+#three-stage-fundo2 {
+  background: url(../imagens/fundo2.png) repeat;
+  opacity: 0.1;
+  z-index: -1;
+}
+@-moz-keyframes fundo-animado {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 552px;
+  }
+}
+@-webkit-keyframes fundo-animado {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 552px;
+  }
+}
+#dialog {
+  position: absolute;
+  display: none;
+  /* IMPORTANTE COMEÇAR */
+  /*
+	overflow:hidden;
+	
+	background: white;
+	border: 1px solid red;
+	*/
+  z-index: 999;
+}
+#torre {
+  width: 100%;
+}
+#torre h1 {
+  font-family: 'Rotis', "TrebuchetMS", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 2.5em;
+  border-bottom: 1px solid #cacaca;
+  text-transform: none;
+  margin: 0 0 10px;
+}
+#torre #torre-info > div {
+  display: table;
+  width: 100%;
+}
+#torre #torre-info > div > * {
+  display: table-cell;
+  vertical-align: middle;
+  /* Icone principal da torre */
+}
+#torre #torre-info > div #torre-icone {
+  width: 35%;
+  height: 150px;
+  /* Foto principal da torre */
+}
+#torre #torre-info > div #torre-icone img {
+  max-width: 85%;
+  max-height: 85%;
+  display: block;
+  margin: 0 auto;
+}
+#torre #torre-info > div #torre-foto img {
+  width: auto;
+  max-height: 150px;
+  display: block;
+  margin: 0 auto;
+}
+#torre #torre-info > div .direita, #torre #torre-info > div .esquerda {
+  width: 48.5%;
+  display: inline-block;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#torre #torre-info > div .direita {
+  float: right;
+}
+.post {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.65);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+  /*.post*/
+  /* Contato */
+}
+.post .info {
+  width: 100%;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  display: table;
+  /*.info*/
+}
+.post .info > * {
+  display: table-cell;
+  vertical-align: top;
+}
+.post .info .icone {
+  width: 25%;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+.post .info .icone img {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+.post .info .mensagem {
+  /*.mensagem*/
+}
+.post .info .mensagem h2 {
+  font-family: 'Rotis', "TrebuchetMS", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: #5c5c5c;
+  margin: 10px 0 0px;
+  font-size: 1.1em;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #cacaca;
+}
+.post .info .mensagem p {
+  margin: 7px 0;
+}
+.post .rodape-faixa {
+  width: 100%;
+  height: 20px;
+  background-color: #f7d95d;
+}
+.post.contato .rodape-faixa {
+  background-color: rgba(247, 217, 93, 0.65);
+}
+.post.principal {
+  color: white;
+  background-color: rgba(116, 213, 132, 0.9);
+  display: inline-block;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  /* .principal */
+}
+.post.principal .info .mensagem h2 {
+  color: white;
+  border-bottom-color: #f7d95d;
+}
+.post.principal .likes {
+  background-color: #f7d95d;
+  display: inline-block;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5px;
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+.post.principal .likes .like, .post.principal .likes .dislike {
+  display: inline-block;
+  float: right;
+  margin-left: 5px;
+  color: #d84040;
+  font-size: 0.8em;
+}
+.post.contato {
+  padding: 0;
+}
+#contato-info {
+  display: table;
+}
+#contato-info > div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+#contato-info > div img {
+  width: 65%;
+}
+#contato-info > div:last-child {
+  width: 72.5%;
+  text-align: left;
+}
+#contato-posts > div {
+  width: 49.5%;
+  display: inline-block;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  display: table-cell;
+  vertical-align: top;
+}
+#contato-posts > div.esquerda {
+  padding-right: 20px;
+}
+#contato-posts > div.direita {
+  padding-left: 20px;
+}

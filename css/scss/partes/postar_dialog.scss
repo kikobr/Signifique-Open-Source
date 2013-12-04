@@ -1,0 +1,145 @@
+/* Postar-dialog */
+#postar-dialog {
+  position:fixed;
+  display:none;
+  padding: 0;
+  background-color:white;
+  z-index: 999;
+  h2 { 
+     color:$cinza;
+     margin:0;
+     padding:1em 0 1em 1em; 
+     text-align:left; 
+  }
+  input, textarea{
+    font-family:inherit;
+    font-size:1.2em;
+    border: 1px solid $cinza-claro;
+    padding: 10px 15px;
+    margin:0;
+    display:block;
+    width: 100%;
+    @include border-box;
+  }
+  textarea{
+    max-height: 100%;
+  }
+  #form-fechar {
+    position: absolute;
+    img { width: 30px; opacity: 0.3; }
+    top: 15px; right: 20px;
+  }
+  #user-config {
+    position:absolute;
+    img { width: 30px; opacity: 0.3; }
+    right: 65px; top: 15px;
+  }
+  #user-config-form {
+    position:absolute;
+    z-index:2;
+    top: 15px; left: 15px;
+    background-color: white;
+    border: 1px solid $cinza;
+    display:none;
+    padding:15px;
+    @include border-box;
+    p { margin:0 0 10px; padding: 0; }
+    input[type=submit]{
+      margin-top:10px;
+      border:none;
+      font-size: 0.9em;
+    }
+    #user-config-fechar {
+      position:absolute;
+      top: 10px; right: 15px;
+      img { 
+        width: 25px;
+        opacity: 0.3;
+      }
+    }
+  }
+  #user-config-form-fundo {
+    position:absolute;
+    z-index: 1;
+    top:0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display:none;
+    transition: all 300ms;
+  }
+}
+
+/* Icones selecionaveis > ul > li */
+#postar-form-top { position: relative; }
+#select-icones-wrapper {
+  position:absolute;
+  bottom:0; left: 0;
+  z-index: 10;
+  width: 100%;
+  height:100%;
+  height: 0%;
+  background-color: transparentize(white,0.15);
+  overflow-y:scroll;
+}
+
+#select-icones {
+  margin:0;
+  display: block;
+  /*height:100%; /* Desabilitar para funcionar a rolagem */
+  h2 {
+    font-size:1.2em;
+    margin:0 0 10px 0;
+    padding: 0.6em; 
+    text-transform: uppercase; 
+    color:white; 
+    background-color:$azul;
+  }
+  ul {
+    display:block;
+    height:auto;
+    list-style:none; padding: 0;
+    text-align:center;
+    margin:0;
+  }
+  li { 
+    @include thumb(4); 
+    img { 
+      display:block; 
+      margin:0 auto;
+      &:active { border: 1px solid $azul; }
+    }
+  }
+}
+
+
+/* Abaixo da caixa de mensagem */
+#postar-form-bottom {
+  /* Icone selecionado */
+  #input-icone {
+    width: 100%;
+    overflow:hidden;
+    padding:10px 0;
+    background-color: $amarelo;  
+    img {
+      display:block;
+      margin:0 auto;
+    }
+  }  
+  /* Botão enviar ->  */
+  input[type=submit], .botao-destaque{
+    display:block;
+    padding:20px 0;
+    margin-bottom:0;
+    border: none;
+    font-size:1em;
+  }
+}
+
+
+/*
+#postar-dialog form {
+  display:block;
+  margin: 0 auto;
+  padding:15px;
+}
+*/

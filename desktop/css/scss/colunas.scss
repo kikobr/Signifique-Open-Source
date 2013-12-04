@@ -1,0 +1,17 @@
+@mixin border-box {
+  display:inline-block;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin thumb($colunas){
+  width: 100%/$colunas - 1%;
+  display:inline-block;
+  @include border-box;
+}
+@mixin w($x){
+	width: $x - 0.5%;
+}
